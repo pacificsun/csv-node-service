@@ -1,0 +1,14 @@
+{
+  "name": "csv-node-service",
+  "version": "1.0.0",
+  "description": "It's a service to load data from csv file to psql",
+  "main": "server.js",
+  "repository": "https://github.com/pacificsun/csv-node-service.git",
+  "author": "Suraj Thapa <stsurajst@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fast-csv": "^4.3.6",
+    "pg": "^8.5.1"
+  }
+}
