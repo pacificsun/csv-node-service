@@ -5,7 +5,7 @@ const fastcsv = require('fast-csv');
 let stream = fs.createReadStream('test.csv');
 let csvData = [];
 let csvStream = fastcsv
-  .parse()
+  .parse({ delimiter: '|' })
   .on('data', function (data) {
     csvData.push(data);
   })
@@ -23,7 +23,7 @@ let csvStream = fastcsv
     });
 
     const query =
-      'INSERT INTO category (id, name, description, created_at) VALUES ($1, $2, $3, $4)';
+      'INSERT INTO category (name, description, created_at) VALUES ($1, $2, $3)';
 
     pool.connect((err, client, done) => {
       if (err) throw err;
